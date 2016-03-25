@@ -1,12 +1,12 @@
 
 def isPalindrome(word):
 	if len(word) <= 1:
-		print "isPalindrome"
+		print("isPalindrome")
 		return True
 	elif word[0] == word[-1]:
 		isPalindrome(word[1:-1])
 	else:
-		print "notPalindrome"
+		print("notPalindrome")
 		return False
 
 # def isPalindrome(s):
@@ -16,7 +16,7 @@ def isPalindrome(word):
 #     else:
 #     		return s[0] == s[-1] and isPalindrome(s[1:-1])
 
-print isPalindrome('aabaa')
+print(isPalindrome('aabaa'))
 
 
 def fib(n):
@@ -25,4 +25,4 @@ def fib(n):
 	else:
 		return fib(n-1) + fib(n-2)
 
-print fib(24)
+print(fib(24))
