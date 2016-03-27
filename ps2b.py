@@ -20,4 +20,4 @@ for n in range(1, 200):   # only search for solutions up to size 200
     ## when done, your answer should be bound to bestSoFar
     if n not in numCanBuy:
         bestSoFar = n
-print("Given package sizes ", packages[0],", ", packages[1], ", and ", packages[2],", the largest number of McNuggets that cannot be bought in exact quantity is: ", bestSoFar, sep='', end='\n')
+print("Given package sizes %d, %d and %d, the largest number of McNuggets that cannot be bought in exact quantity is: %d " %(packages[0], packages[2], packages[2], bestSoFar))
