@@ -1,0 +1,2 @@
+def subStringMatchExact(target,key):
+    

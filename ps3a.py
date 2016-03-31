@@ -10,14 +10,17 @@ def countSubStringMatch(target, key):
                 count += 1
     return count
 
+# ???Recursive
 def countSubStringMatchRecursive(target, key):
+    i = []
     if len(target) < len(key):
         return 0
-    else:
-        i = 0
-        i = target.find(key, i) + 1
+    elif target.find(key) != -1:
+        i.append(target.find(key))
+    countSubStringMatchRecursive(target[i[-1]+1: len(target)], key)
+    return len(i)
         
         
         
 print(countSubStringMatch('aaaaaaaa', 'aaaaaa'))
-print(countSubStringMatchRecursive('aaaaaaaa', 'aaaaaa'))
+print(countSubStringMatchRecursive('aa', 'a'))
