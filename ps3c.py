@@ -31,7 +31,7 @@ def subStringMatchOneSub(key,target):
         # key1 and key2 are substrings to match
         key1 = key[:miss]
         key2 = key[miss+1:]
-        print 'breaking key',key,'into',key1,key2
+        print('breaking key',key,'into',key1,key2)
         # match1 and match2 are tuples of locations of start of matches
         # for each substring in target
         match1 = subStringMatchExact(target,key1)
@@ -40,7 +40,24 @@ def subStringMatchOneSub(key,target):
         # need to filter pairs to decide which are correct
         filtered = constrainedMatchPair(match1,match2,len(key1))
         allAnswers = allAnswers + filtered
-        print 'match1',match1
-        print 'match2',match2
-        print 'possible matches for',key1,key2,'start at',filtered
+        print('match1',match1)
+        print('match2',match2)
+        print('possible matches for',key1,key2,'start at',filtered)
     return allAnswers
+
+def subStringMatchExact(target,key):
+    pos = []
+    for i in range(0, len(target)):
+        if target[i:i+len(key)] == key:
+            pos.append(i)
+    return tuple(pos)
+
+def constrainedMatchPair(firstMatch,secondMatch,length):
+    n = []
+    for i in firstMatch:
+        for j in secondMatch:
+            if i + length +1 == j:
+                n.append(i)
+    return tuple(n)
+
+subStringMatchOneSub(key11, target2)
