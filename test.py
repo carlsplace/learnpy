@@ -1,5 +1,4 @@
-def recursive(n):
-    print(n)
-    recursive(n+1)
+def test():
+    return [1, 2, 3]
     
-recursive(1)
+print(test()[1])
