@@ -55,3 +55,39 @@ def get_frequency_dict(sequence):
 wordlist = load_words()
 
 # TO DO: your code begins here!
+def player(player_num):
+    """
+    get player's input, check valid or not
+    
+    player_num: int
+    """
+    pass
+    
+def change_frag(fragment, input_letter):
+    fragment.append(input_letter)
+    return fragment
+
+def check_frag(fragment, wordlist_to_change):
+    lose_in_dict = False
+    lose_illegal = False
+    len_frag = len(fragment)
+    wordlist_changed = []
+    if len_frag>3 and fragment in wordlist_to_change:
+        lose_in_dict = True
+        return lose
+    for word in wordlist_to_change:
+        if word[len_frag-1] == fragment[-1]:
+            wordlist_changed.append(word)
+    if len_frag>3 and len(wordlist_changed) == 0:
+        lose_illegal = True
+        return lose_illegal
+    return wordlist_changed
+
+# test code
+wordlist_changed = check_frag('z', wordlist)
+print wordlist_changed
+wordlist_changed = check_frag('za', wordlist_changed)
+print wordlist_changed
+# wordlist_changed = check_frag('zax', wordlist_changed)
+# print wordlist_changed
+# test code end
